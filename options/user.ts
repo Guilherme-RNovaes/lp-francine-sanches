@@ -7,6 +7,7 @@ export interface User {
   contactText: string;
   heroImageUrl: string;
   aboutImageUrl: string;
+  logoUrl: string;
 }
 
 const userProps: User =
@@ -19,6 +20,7 @@ const userProps: User =
   contactText: 'Estou aqui para te ouvir. Caso tenha dúvidas, queira agendar uma sessão ou apenas saber mais sobre o meu trabalho, sinta-se à vontade para entrar em contato.',
   heroImageUrl: '/images/francine-sanches-hero-photo.png',
   aboutImageUrl: '/images/francine-sanches-about-photo.jpg',
+  logoUrl: '/Logo-dark.svg'
 }
 
 export default userProps;

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito, Italianno, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
-import Navbar from "./(home)/_components/Navbar";
+import Navbar from "./_components/Navbar";
 
 const nunito = Nunito({
   variable: "--text",

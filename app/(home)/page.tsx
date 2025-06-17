@@ -5,9 +5,13 @@ export default function Home() {
   return (
     <ReactLenis root>
       <main className="min-h-screen">
-        <Hero />
-        <Hero />
-        <Hero />
+        <section className="sticky top-0">
+          <Hero />
+        </section>
+        <section className="sticky">
+          <Hero />
+          <Hero />
+        </section>
         <Hero />
       </main>
     </ReactLenis>
