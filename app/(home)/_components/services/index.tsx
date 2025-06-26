@@ -65,7 +65,6 @@ export default function Services() {
               ({String(i + 1).padStart(2, '0')})
             </span>
             <Image
-              ref={el => imageRefs.current[i] = el}
               src={item.image}
               alt={item.title}
               width={250}
