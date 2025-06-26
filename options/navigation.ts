@@ -7,7 +7,7 @@ export type navigation = {
 const NavigationProps: navigation[] = [
   {
     name: 'Home',
-    href: '/#home',
+    href: '/',
     id: 'home',
   },
   {
