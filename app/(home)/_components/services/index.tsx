@@ -35,7 +35,7 @@ export default function Services() {
 
     gsap.utils.toArray('.highlight').forEach((el, index) => {
       gsap.fromTo(
-        el,
+        el as Element,
         { backgroundSize: '0% 100%' },
         {
           backgroundSize: '100% 100%',
@@ -43,7 +43,7 @@ export default function Services() {
           ease: 'power2.out',
           delay: index * 0.4,
           scrollTrigger: {
-            trigger: el,
+            trigger: el as Element,
             start: 'top 80%',
           },
         }
