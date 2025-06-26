@@ -3,12 +3,12 @@ import AnimatedLink from "../../animated-link";
 
 export default function NavigationItems() {
   return (
-    <nav className="flex flex-row items-center justify-center gap-10">
+    <nav className="flex flex-col md:flex-row items-start justify-center gap-10">
       {NavigationProps.map((props, index) => (
         <AnimatedLink
           href={props.href}
           key={index}
-          className='text-foreground font-medium text-sm'
+          className='text-foreground font-medium text-xl'
           hasTarget={false}
         >
           {props.name}
