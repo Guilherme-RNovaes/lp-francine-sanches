@@ -10,6 +10,7 @@ import About from "./_components/about";
 import Therapy from "./_components/therapy";
 import Footer from "./_components/footer";
 import Contact from "./_components/contact";
+import EntryAnimation from "../_components/entry-animation";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,6 +56,7 @@ export default function Home() {
   return (
     <ReactLenis root>
       <main className="min-h-screen">
+        <EntryAnimation />
         <section ref={heroSection} className="sticky section-down top-0">
           <Hero />
         </section>
