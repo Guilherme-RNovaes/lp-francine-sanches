@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@layer base {
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
 :root {
   --background: #F5F3F0;
   --background-secondary: #DDDBF1;
