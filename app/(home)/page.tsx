@@ -3,7 +3,7 @@
 import ReactLenis, { useLenis } from "lenis/react";
 import Hero from "./_components/hero";
 import Services from "./_components/services";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import About from "./_components/about";

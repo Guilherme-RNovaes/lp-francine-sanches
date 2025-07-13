@@ -42,16 +42,17 @@ export default function Services() {
     })
     gsap.fromTo(
       splitChars.chars,
-      { y: "115%" },
+      { y: 50, opacity: 0 },
       {
-        y: "0%",
+        y: 0,
+        opacity: 1,
         ease: "power4.out",
         duration: 0.7,
         stagger: 0.03,
         scrollTrigger: {
           trigger: servicesContainerRef.current,
-          start: 'top 80%',
-          markers: true,
+          start: 'top 75%',
+          markers: false,
         }
       }
     )
@@ -78,13 +79,13 @@ export default function Services() {
     }
   }, [])
   return (
-    <section id="services" className="min-h-screen w-screen flex flex-col items-center text-foreground justify-between bg-background-secondary relative pt-20 md:pb-20 px-10 rounded-t-4xl">
-      <h2 className="font-sub-title text-[9vw] md:text-[10vw] xl:text-[11.2vw] pb-24 overflow-hidden">
+    <section ref={servicesContainerRef} id="services" className="min-h-screen w-screen flex flex-col items-center text-foreground justify-between bg-background-secondary relative pt-20 md:pb-20 px-10 rounded-t-4xl">
+      <h2 className="font-sub-title text-[9vw] md:text-[10vw] xl:text-[11.2vw] pb-24 overflow-hidden lead">
         <span className="reveal-services-header translate-y-[100%] pr-1">
           Como posso te ajudar
         </span>
       </h2>
-      <div ref={servicesContainerRef} className="grid gap-20 w-full">
+      <div className="grid gap-20 w-full">
         {ServicesProps.map((item, i) => (
           <div
             key={i}
