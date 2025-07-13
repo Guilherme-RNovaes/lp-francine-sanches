@@ -1,6 +1,6 @@
 'use client'
 
-import ReactLenis from "lenis/react";
+import ReactLenis, { useLenis } from "lenis/react";
 import Hero from "./_components/hero";
 import Services from "./_components/services";
 import { useEffect, useRef } from "react";
@@ -11,19 +11,27 @@ import Therapy from "./_components/therapy";
 import Footer from "./_components/footer";
 import Contact from "./_components/contact";
 import EntryAnimation from "../_components/entry-animation";
+import { useGSAP } from "@gsap/react";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
 
   const heroSection = useRef(null)
+  const otherSection = useRef(null)
+  const lenis = useLenis()
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
+  useLenis(() => {
+    ScrollTrigger.update()
+  })
+
+  useGSAP(() => {
+    lenis?.scrollTo(0, { immediate: true })
 
     const heroSectionElement = heroSection.current;
     gsap.fromTo(
-      '.section-up',
+      otherSection.current,
       { scaleX: '95%' },
       {
         scaleX: '100%',
@@ -38,7 +46,7 @@ export default function Home() {
     )
 
     gsap.fromTo(
-      '.section-down',
+      heroSection.current,
       { translateY: '0%', opacity: '100%' },
       {
         translateY: '5%',
@@ -52,15 +60,16 @@ export default function Home() {
         },
       }
     )
-  }, []);
+    ScrollTrigger.refresh()
+  }, [lenis]);
   return (
     <ReactLenis root>
       <main className="min-h-screen">
         <EntryAnimation />
-        <section ref={heroSection} className="sticky section-down top-0">
+        <section ref={heroSection} className="sticky top-0">
           <Hero />
         </section>
-        <section className="sticky section-up">
+        <section ref={otherSection} className="sticky">
           <Services />
           <About />
           <Therapy />

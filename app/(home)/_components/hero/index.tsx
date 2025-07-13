@@ -18,9 +18,10 @@ export default function Hero() {
 
     tl.fromTo(
       splitChars.chars,
-      { y: "115%" },
+      { y: 50, opacity: 0 },
       {
-        y: "0%",
+        y: 0,
+        opacity: 1,
         ease: "power4.out",
         duration: 0.7,
         stagger: 0.03,
@@ -29,9 +30,9 @@ export default function Hero() {
     );
 
     tl.fromTo(splitWords.words,
-      { y: "100%", opacity: 0 },
+      { y: 50, opacity: 0 },
       {
-        y: "0%",
+        y: 0,
         opacity: 1,
         ease: "power4.out",
         duration: 0.5,
@@ -41,9 +42,9 @@ export default function Hero() {
     );
     tl.fromTo(
       ".sub-reveal",
-      { y: "100%", opacity: 0 },
+      { y: 50, opacity: 0 },
       {
-        y: "0%",
+        y: 0,
         opacity: 1,
         duration: 0.5,
         stagger: 0.05,
@@ -61,19 +62,19 @@ export default function Hero() {
     <section id="home" className="min-h-screen w-screen flex flex-col items-center text-foreground justify-between bg-background relative pt-40 md:pt-40 pb-40 md:pb-20 px-10">
       <div className="flex flex-col md:flex-row w-full items-center justify-between pb-32 2xl:pb-20">
         <div className="flex flex-col items-start justify-start font-title text-[15vw] md:text-[12vw]">
-          <h1 className="leading-[12vw] overflow-hidden text-[15vw]">
-            <span className="reveal-hero translate-y-[100%] pr-1">
+          <h1 className="leading-[12vw] text-[15vw]">
+            <span className="reveal-hero translate-y-[20%] pr-1">
               {userProps.name}
             </span>
           </h1>
           <div className="flex flex-col md:flex-row items-start md:items-center justify-center md:gap-8 xl:gap-16">
             <h2 className="leading-[12vw] overflow-hidden">
-              <span className="reveal-hero translate-y-[115%] pr-1">
+              <span className="reveal-hero translate-y-[20%] pr-1">
                 {userProps.lastName}
               </span>
             </h2>
             <h3 className="text-xl md:text-2xl xl:text-3xl font-sub-title overflow-hidden">
-              <span className="reveal-text translate-y-[115%]">
+              <span className="reveal-text translate-y-[20%]">
                 {userProps.profession}
               </span>
             </h3>
