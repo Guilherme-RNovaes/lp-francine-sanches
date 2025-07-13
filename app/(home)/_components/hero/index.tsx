@@ -10,12 +10,10 @@ export default function Hero() {
     const tl = gsap.timeline();
     const splitChars = new SplitType('.reveal-hero', {
       types: 'chars',
-      charClass: 'reveal-text',
     })
 
     const splitWords = new SplitType('.reveal-text', {
       types: 'words',
-      charClass: 'reveal-text',
     })
 
     tl.fromTo(
@@ -25,6 +23,7 @@ export default function Hero() {
         y: "0%",
         ease: "power4.out",
         duration: 0.7,
+        stagger: 0.03,
         delay: 2.8,
       }
     );
@@ -51,12 +50,18 @@ export default function Hero() {
       },
       "-=2.4"
     )
-  })
+
+    return () => {
+      splitChars.revert()
+      splitWords.revert()
+    }
+  }, [])
+
   return (
     <section id="home" className="min-h-screen w-screen flex flex-col items-center text-foreground justify-between bg-background relative pt-40 md:pt-40 pb-40 md:pb-20 px-10">
       <div className="flex flex-col md:flex-row w-full items-center justify-between pb-32 2xl:pb-20">
         <div className="flex flex-col items-start justify-start font-title text-[15vw] md:text-[12vw]">
-          <h1 className="leading-[12vw] overflow-hidden">
+          <h1 className="leading-[12vw] overflow-hidden text-[15vw]">
             <span className="reveal-hero translate-y-[100%] pr-1">
               {userProps.name}
             </span>
